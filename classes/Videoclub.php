@@ -60,7 +60,7 @@ class Videoclub {
         }
     }
 
-    public function llogarSociProducte(int $numSoci, int $numProducte): void {
+    public function llogarSociProducte(int $numSoci, int $numProducte): self {
         $sociTrobat = null;
         foreach ($this->socis as $soci) {
             if ($soci->getNumero() == $numSoci) {
@@ -82,5 +82,6 @@ class Videoclub {
         } else {
             echo "<br><strong>ERROR: Soci o producte no trobat.</strong><br>";
         }
+        return $this;
     }
 }

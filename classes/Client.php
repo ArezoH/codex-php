@@ -35,21 +35,21 @@ class Client {
         return in_array($s, $this->soportsLlogats);
     }
 
-    public function llogar(Soport $s): bool {
+    public function llogar(Soport $s): self {
         if ($this->teLlogat($s)) {
             echo "Ja tens aquest suport \"" . $s->titol . "\" llogat.<br>";
-            return false;
+            return $this;
         }
 
         if (count($this->soportsLlogats) >= $this->maxLloguerConcurrent) {
             echo "Has arribat al màxim de lloguers (" . $this->maxLloguerConcurrent . ").<br>";
-            return false;
+            return $this;
         }
 
         $this->soportsLlogats[] = $s;
         $this->numSoportsLlogats++;
         echo "Llogat correctament: " . $s->titol . " a client: " . $this->nom . "<br>";
-        return true;
+        return $this;
     }
 
     // --- MÈTODES QUE FALTAVEN ---
