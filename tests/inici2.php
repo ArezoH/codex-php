@@ -22,18 +22,17 @@ echo "</br>";
 $soport4 = new Dvd("El Imperio Contraataca", 4, 3, "es,en","16:9");
 echo "</br>";
 //Llog alguns soports
-$client1->llogar($soport1);
-$client1->llogar($soport2);
-$client1->llogar($soport3);
+$client1
+    ->llogar($soport1)
+    ->llogar($soport2)
+    ->llogar($soport3);
 
 echo "</br>";
 //vaig intentar llogar de nou un soport que ja té llogat
-$client1->llogar($soport1);
-
-echo "</br>";
-//el client té 3 soports de lloguer com a màxim
-//aquest soport no el pot llogar
-$client1->llogar($soport4);
+//el client té 3 soports de lloguer com a màxim, aquest suport no el pot llogar
+$client1
+    ->llogar($soport1)
+    ->llogar($soport4);
 
 echo "</br>";
 //aquest soport no el té llogat
